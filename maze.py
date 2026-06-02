@@ -36,3 +36,14 @@ class QueueFrontier(StackFrontier):
             node = self.frontier[0]
             self.frontier = self.frontier[1:]
             return node
+        
+class Maze():
+
+    def __init__(self, filename):
+        #read file and set height and width of maze
+
+        with open(filename) as f:  
+            contents = f.read()
+
+        #Validate start and goal 
+        if contents.count("A") ! = 1
