@@ -18,3 +18,21 @@ class StackFrontier():
     
     def empty(self):
         return len(self.frontier) == 0
+    
+    def remove(self):
+        if self.empty():
+            raise Exception("Empty Frontier")
+        else:
+            node = self.frontier [-1]
+            self.frontier = self.frontier[:-1]
+            return node 
+        
+class QueueFrontier(StackFrontier):
+
+    def remove(self):
+        if self.empty():
+            raise Exception
+        else:
+            node = self.frontier[0]
+            self.frontier = self.frontier[1:]
+            return node
