@@ -106,6 +106,24 @@ class Maze():
             ("right", (row, col +1))
         ]
 
+        #Ensure actions are valid
+        result = []
+        for action, (r, c) in candidates:
+            try:
+                if not self.walls[r][c]:
+                    result.append((action, (r, c)))
+            except IndexError:
+                continue
+        return result
+    
+    def solve(self):
+        """Find a solution to maze, if one exists."""
+
+        #Keep track of numbernof states explored
+        self.num_explored = 0
+
+        #Initialize frontier to just 
+
     
                 
 
