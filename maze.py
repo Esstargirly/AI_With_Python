@@ -122,7 +122,13 @@ class Maze():
         #Keep track of numbernof states explored
         self.num_explored = 0
 
-        #Initialize frontier to just 
+        #Initialize frontier to just the starting position
+        start = Node(state=self.start, parent=Node, action=None)
+        frontier = StackFrontier()
+        frontier.add(start)
+
+        #Initialize an empty exploredn set
+        self.explored = set()
 
     
                 
