@@ -68,7 +68,7 @@ class Maze():
                     elif contents [i][j] == "B":
                         self.goal = (i, j)
                         row.append(False)
-                    elif contents [i] [j] == "":
+                    elif contents [i] [j] == " ":
                         row.append(False)
                     else:
                         row.append(True)
@@ -153,6 +153,18 @@ class Maze():
                     node = node.parent
                 actions.reverse()
                 cells.reverse()
+                self.solution = (actions, cells)
+                return
+            
+            #mark node as explored
+            self.explored.add(node.state)
+
+            #mark neighbours to frontier
+            for action, state in self.neighbours(node.state):
+                if not frontier.contians_state(state) and state not in self.explored:
+                    child = Node(state=state, parent=node, action=action)
+                    frontier.add(child)
+                
 
 
     
