@@ -79,11 +79,11 @@ class Maze():
 
     def print(self):
         solution = self.solution[1] if self.solution is not None else None
-        print(None)
+        print()
         for i, row in enumerate (self.walls):
             for j, col in enumerate(row):
                 if col:
-                    print("", end="")
+                    print("█", end="")
                 elif (i, j) == self.start:
                     print("A", end="")
                 elif (i, j) == self.goal:
@@ -199,7 +199,7 @@ class Maze():
                     fill = (220, 235, 113)
 
                 #explored 
-                elif solution is not None and show_solution and (i, j) in self.explored:
+                elif self.explored  and show_solution and (i, j) in self.explored:
                     fill = (212, 97, 85)
 
                 #empty
